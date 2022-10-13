@@ -63,5 +63,4 @@ class FollowViewSet(
         return Follow.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        if serializer.is_valid():
-            serializer.save(user=self.request.user)
+        serializer.save(user=self.request.user)
